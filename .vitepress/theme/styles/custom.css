@@ -1,0 +1,35 @@
+/* 自定义样式 */
+
+/* 顶部导航栏文字大小 */
+.trm-top-bar .trm-menu li a,
+.trm-top-bar .trm-menu li span {
+  font-size: 14px !important;
+  font-weight: 700;
+}
+
+/* 侧边栏用户名 */
+.trm-sidebar-user .trm-name {
+  font-size: 22px !important;
+  font-weight: 600;
+}
+
+/* 侧边栏打字文字 */
+.trm-sidebar-user .trm-label {
+  font-size: 15px !important;
+}
+
+/* 文章标题 */
+.trm-post-title h1 {
+  font-size: 36px !important;
+}
+
+/* 文章列表标题 */
+.trm-card-item .trm-title {
+  font-size: 20px !important;
+}
+
+/* 修复分页切换后卡片不显示的问题 - 强制显示滚动动画元素 */
+.trm-scroll-animation {
+  opacity: 1 !important;
+  transform: translateY(0) scale(1) !important;
+}

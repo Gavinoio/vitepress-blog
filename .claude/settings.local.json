@@ -1,0 +1,28 @@
+{
+  "permissions": {
+    "allow": [
+      "WebSearch",
+      "WebFetch(domain:vitepress-theme-async.imalun.com)",
+      "Bash(npm install)",
+      "Bash(npm run dev)",
+      "Bash(npm run build:*)",
+      "Bash(dir:*)",
+      "Bash(findstr:*)",
+      "Bash(npm ls:*)",
+      "Bash(ls:*)",
+      "Bash(npm run preview:*)",
+      "Bash(cat:*)",
+      "Bash(npx vitepress:*)",
+      "WebFetch(domain:huangguanhao.com)",
+      "Bash(powershell:*)",
+      "Bash(curl:*)",
+      "Bash(xargs cat:*)",
+      "Bash(del \"c:\\\\Users\\\\Even Huang\\\\Desktop\\\\Blog\\\\.vitepress\\\\theme\\\\faviconSwitcher.ts\")",
+      "Bash(find:*)",
+      "Bash(del \"public\\\\covers\\\\cover-*.jpg\")",
+      "Bash(git init:*)",
+      "Bash(git branch:*)",
+      "Bash(git add:*)"
+    ]
+  }
+}

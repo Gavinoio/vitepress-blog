@@ -1,0 +1,63 @@
+/*
+ * @Author: Gavenr huangguanhao@youloft.com
+ * @Date: 2025-12-18 16:40:37
+ * @LastEditors: Gavenr huangguanhao@youloft.com
+ * @LastEditTime: 2025-12-18 17:40:42
+ * @FilePath: \Blog\.vitepress\theme\faviconSwitcher.ts
+ * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ */
+// Favicon 切换器配置
+const FAVICON_CONFIG = {
+  original: '/letter-g.png',      // 正常显示的图标
+  gray: '/letter-g-gray.png',     // 页面隐藏时显示的灰度图标
+};
+
+export function setupFaviconSwitcher() {
+  // 缓存已加载的图标 URL，避免重复添加时间戳
+  let cachedOriginalUrl = '';
+  let cachedGrayUrl = '';
+
+  function updateFavicon(href: string, isGray: boolean) {
+    if (!href) return;
+
+    // 查找所有 favicon 元素
+    const links = document.querySelectorAll("link[rel*='icon']") as NodeListOf<HTMLLinkElement>;
+
+    // 删除所有现有的 favicon 元素
+    links.forEach((link) => {
+      link.remove();
+    });
+
+    // 使用缓存的 URL 或生成新的带时间戳的 URL（仅首次）
+    let finalUrl: string;
+    if (isGray) {
+      if (!cachedGrayUrl) {
+        cachedGrayUrl = href + '?t=' + Date.now();
+      }
+      finalUrl = cachedGrayUrl;
+    } else {
+      if (!cachedOriginalUrl) {
+        cachedOriginalUrl = href + '?t=' + Date.now();
+      }
+      finalUrl = cachedOriginalUrl;
+    }
+
+    // 创建新的 favicon 元素
+    const newLink = document.createElement('link');
+    newLink.rel = 'icon';
+    newLink.type = 'image/png';
+    newLink.href = finalUrl;
+    document.head.appendChild(newLink);
+  }
+
+  // 监听页面可见性变化
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) {
+      // 页面隐藏时，切换到灰度 favicon
+      updateFavicon(FAVICON_CONFIG.gray, true);
+    } else {
+      // 页面显示时，恢复原始 favicon
+      updateFavicon(FAVICON_CONFIG.original, false);
+    }
+  });
+}
