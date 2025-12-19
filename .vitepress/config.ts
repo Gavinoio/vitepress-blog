@@ -5,6 +5,7 @@ export default defineConfig({
   description: '这里是Gavinの菜鳥宿場，记录着一些日常、作品、笔记、小工具。',
   lang: 'zh-CN',
   srcExclude: ['**/vitepress-theme-async/**'],
+  base: '/', // Vercel 部署使用根路径
 
   themeConfig: {
     author: 'Gavin',
