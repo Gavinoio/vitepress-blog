@@ -45,6 +45,12 @@ export default defineConfig({
       { title: 'About', url: '/about' }
     ],
 
+    // 首页横幅配置
+    banner: {
+      type: 'video',
+      bgurl: 'https://qiniu.image.cq-wnl.com/content/202412192cc50f3dbc2043ddb1ff6d73c93d45ec_724.mp4'
+    },
+
     // 侧边栏社交链接
     sidebar: {
       typedTextPrefix: '',
