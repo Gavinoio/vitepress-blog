@@ -12,11 +12,6 @@ export default defineConfig({
     // 文章目录配置
     postDir: 'posts',
 
-    // 首页文章列表分页配置
-    indexGenerator: {
-      perPage: 10
-    },
-
     // 主题配色
     themeColor: {
       enable: true,
