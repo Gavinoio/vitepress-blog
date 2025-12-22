@@ -17,16 +17,6 @@ export default defineConfig({
       perPage: 10
     },
 
-    // 全局 Banner 配置 - 所有页面默认使用视频背景
-    banner: {
-      type: 'video',
-      bgurl: '/autumn20190924.mp4', // 使用本地视频，确保可靠性
-      // bannerTitle: '欢迎来到Gavinの菜鳥宿場',
-      bannerText: '欢迎来到Gavinの菜鳥宿場',
-      position: 'center',
-      fit: 'cover'
-    },
-
     // 主题配色
     themeColor: {
       enable: true,
