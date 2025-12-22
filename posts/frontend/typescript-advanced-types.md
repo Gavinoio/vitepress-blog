@@ -1,6 +1,6 @@
 ---
 title: TypeScript 高级类型系统完全指南
-date: 2024-12-18
+date: 2024-12-18 08:46:54
 categories:
   - 前端开发
 tags:

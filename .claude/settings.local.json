@@ -27,7 +27,14 @@
       "Bash(git remote add:*)",
       "Bash(git push:*)",
       "Bash(git remote set-url:*)",
-      "Bash(del \"package-lock.json\")"
+      "Bash(del \"package-lock.json\")",
+      "Bash(timeout 10 npm run dev:*)",
+      "Bash(npm install:*)",
+      "Bash(for file in posts/**/*.md)",
+      "Bash(do grep -q \"^date:\" \"$file\")",
+      "Bash(echo:*)",
+      "Bash(done)",
+      "Bash(npm view:*)"
     ]
   }
 }
