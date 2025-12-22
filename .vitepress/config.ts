@@ -48,7 +48,7 @@ export default defineConfig({
     // 首页横幅配置
     banner: {
       type: 'video',
-      bgurl: 'https://qiniu.image.cq-wnl.com/content/202412192cc50f3dbc2043ddb1ff6d73c93d45ec_724.mp4'
+      bgurl: 'https://qiniu.image.cq-wnl.com/content/2025122293be4d94f68f44988037eaaa036d2a3b.mp4'
     },
 
     // 侧边栏社交链接
