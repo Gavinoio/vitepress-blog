@@ -1,6 +1,7 @@
 ---
 title: 标签
 layout: tags
+date: 2024-12-15
 banner:
   type: img
   bgurl: https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=1920
