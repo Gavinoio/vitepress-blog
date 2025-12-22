@@ -34,7 +34,8 @@
       "Bash(do grep -q \"^date:\" \"$file\")",
       "Bash(echo:*)",
       "Bash(done)",
-      "Bash(npm view:*)"
+      "Bash(npm view:*)",
+      "Bash(ping:*)"
     ]
   }
 }
