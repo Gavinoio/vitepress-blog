@@ -14,8 +14,7 @@ export default defineConfig({
 
     // 首页文章列表分页配置
     indexGenerator: {
-      perPage: 10,
-      orderBy: '-date'
+      perPage: 10
     },
 
     // 全局 Banner 配置 - 所有页面默认使用视频背景
