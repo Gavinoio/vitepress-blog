@@ -4,3 +4,7 @@ node_modules
 dist
 .DS_Store
 *.log
+
+# Claude Code 临时文件
+tmpclaude-*
+extensions_list.txt
