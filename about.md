@@ -20,8 +20,8 @@ banner:
 
 ## 联系方式
 
-- GitHub: [https://github.com](https://github.com)
-- Email: example@email.com
+- GitHub: [https:// .com/Gavinoio](https://github.com/Gavinoio)
+- Email: 64867944@qq.com
 
 ## 博客主题
 

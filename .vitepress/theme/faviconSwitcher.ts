@@ -1,11 +1,3 @@
-/*
- * @Author: Gavenr huangguanhao@youloft.com
- * @Date: 2025-12-18 16:40:37
- * @LastEditors: Gavenr huangguanhao@youloft.com
- * @LastEditTime: 2025-12-18 17:40:42
- * @FilePath: \Blog\.vitepress\theme\faviconSwitcher.ts
- * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
- */
 // Favicon 切换器配置
 const FAVICON_CONFIG = {
   original: '/letter-g.png',      // 正常显示的图标
