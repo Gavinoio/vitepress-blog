@@ -1,6 +1,14 @@
 ---
 title: CSS 动画完全指南：从入门到精通
-date: 2024-12-13 05:25:02
+date: 2025-02-05 10:45:00
+cover: https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=1920
+description: 全面讲解 CSS 动画技术，包括 Transition 过渡、Animation 关键帧动画、Transform 变换、贝塞尔曲线、性能优化技巧等，配有丰富的实战案例和最佳实践，让你的网页动起来。
+keywords:
+  - CSS 动画
+  - Transition
+  - Animation
+  - Transform
+  - 前端动画
 categories:
   - 前端开发
 tags:

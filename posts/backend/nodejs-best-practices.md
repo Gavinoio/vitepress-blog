@@ -1,13 +1,20 @@
 ---
 title: Node.js 最佳实践指南
-date: 2024-12-12 12:44:24
+date: 2025-02-20 09:20:00
+description: 全面讲解 Node.js 开发的最佳实践，包括项目结构、错误处理、日志记录、安全防护、性能优化、测试策略等，帮助你构建高质量的 Node.js 应用。
+keywords:
+  - Node.js
+  - 最佳实践
+  - 后端开发
+  - 错误处理
+  - 性能优化
 categories:
   - 后端开发
 tags:
   - Node.js
   - JavaScript
   - 最佳实践
-cover: https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1920
+cover: https://images.unsplash.com/photo-1627398242454-45a1465c2479?w=1920
 ---
 
 # Node.js 最佳实践指南

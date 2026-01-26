@@ -1,6 +1,14 @@
 ---
 title: React 性能优化实战指南
-date: 2024-12-15 22:34:20
+date: 2025-06-22 14:30:00
+cover: https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1920
+description: 全面讲解 React 应用性能优化的各种技巧和方法，包括组件拆分、memo 缓存、useMemo/useCallback、代码分割、虚拟化列表等，配有实战案例和最佳实践。
+keywords:
+  - React 性能优化
+  - memo
+  - useMemo
+  - 代码分割
+  - 前端优化
 categories:
   - 前端开发
 tags:

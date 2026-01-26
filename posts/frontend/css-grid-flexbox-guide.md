@@ -1,6 +1,13 @@
 ---
 title: CSS Grid 与 Flexbox 布局完全指南
-date: 2024-12-14 15:08:29
+date: 2025-01-22 16:30:00
+description: 深入讲解 CSS Grid 和 Flexbox 两大现代布局技术，包括核心概念、属性详解、实战案例、性能对比和选择指南，帮助你掌握响应式布局的精髓。
+keywords:
+  - CSS Grid
+  - Flexbox
+  - CSS 布局
+  - 响应式设计
+  - 现代 CSS
 categories:
   - 前端开发
 tags:

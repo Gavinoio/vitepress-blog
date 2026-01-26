@@ -1,6 +1,14 @@
 ---
 title: iOS VisionKit 与 Vision Framework 完全指南：从文档扫描到 AI 视觉识别
-date: 2026-01-20 14:22:00
+date: 2026-01-10 14:20:00
+description: 全面深入讲解 iOS VisionKit 和 Vision Framework 的使用方法，包括文档扫描、OCR 文字识别、物体检测、人脸识别、图像分类等功能，配有完整的 SwiftUI 实战案例和性能优化建议。
+keywords:
+  - iOS
+  - VisionKit
+  - Vision Framework
+  - OCR
+  - 图像识别
+  - SwiftUI
 categories:
   - iOS 开发
 tags:

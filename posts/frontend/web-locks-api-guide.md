@@ -1,6 +1,13 @@
 ---
 title: 深入理解 Web Locks API：浏览器原生的资源锁定机制
-date: 2026-01-04 14:00:00
+date: 2025-09-05 14:00:00
+description: 深入讲解 Web Locks API 的工作原理和使用方法，包括独占锁、共享锁、锁的生命周期、实战应用场景等，帮助你在浏览器中实现可靠的并发控制。
+keywords:
+  - Web Locks API
+  - 并发控制
+  - 浏览器 API
+  - 资源锁定
+  - JavaScript
 categories:
   - 前端开发
 tags:
@@ -8,7 +15,7 @@ tags:
   - JavaScript
   - 并发控制
   - 浏览器原生 API
-cover: https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1920
+cover: https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=1920
 ---
 
 # 深入理解 Web Locks API：浏览器原生的资源锁定机制

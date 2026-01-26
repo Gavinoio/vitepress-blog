@@ -1,6 +1,13 @@
 ---
 title: RESTful API 设计最佳实践
-date: 2024-12-05 02:34:00
+date: 2025-01-08 11:00:00
+description: 全面讲解 RESTful API 的设计原则和最佳实践，包括资源设计、HTTP 方法、状态码、错误处理、版本控制、安全认证等，帮助你设计高质量的 Web API。
+keywords:
+  - RESTful API
+  - API 设计
+  - HTTP
+  - Web API
+  - 接口设计
 categories:
   - 后端开发
 tags:

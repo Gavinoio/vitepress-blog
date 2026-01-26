@@ -1,6 +1,13 @@
 ---
 title: CI/CD 与 Jenkins 完全指南
-date: 2026-01-15 14:30:00
+date: 2025-11-28 09:50:00
+description: 全面讲解 CI/CD 持续集成和持续部署的概念与实践，深入介绍 Jenkins 的安装配置、Pipeline 编写、自动化测试、部署策略等，帮助你构建高效的 DevOps 流程。
+keywords:
+  - CI/CD
+  - Jenkins
+  - DevOps
+  - 持续集成
+  - 自动化部署
 categories:
   - 开发工具
 tags:

@@ -1,6 +1,13 @@
 ---
 title: Webpack 性能优化完全指南
-date: 2024-12-16 21:31:07
+date: 2025-05-15 16:10:00
+description: 全面讲解 Webpack 构建性能优化的各种技巧，包括代码分割、Tree Shaking、缓存策略、并行构建、压缩优化等，帮助你大幅提升构建速度和打包体积。
+keywords:
+  - Webpack
+  - 性能优化
+  - 构建工具
+  - 代码分割
+  - Tree Shaking
 categories:
   - 前端开发
 tags:

@@ -1,6 +1,13 @@
 ---
 title: TypeScript 高级类型系统完全指南
-date: 2024-12-18 08:46:54
+date: 2025-04-28 11:45:00
+description: 深入讲解 TypeScript 高级类型系统的各种特性，包括联合类型、交叉类型、条件类型、类型推断、泛型约束、映射类型等，配有丰富的实战案例，帮助你写出类型更安全的代码。
+keywords:
+  - TypeScript
+  - 类型系统
+  - 泛型
+  - 高级类型
+  - 类型推断
 categories:
   - 前端开发
 tags:

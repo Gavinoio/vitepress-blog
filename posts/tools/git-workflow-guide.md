@@ -1,6 +1,13 @@
 ---
 title: Git 工作流最佳实践
-date: 2024-12-03 09:57:17
+date: 2024-12-28 15:00:00
+description: 全面讲解 Git 工作流的最佳实践，包括 Feature Branch、Git Flow、GitHub Flow 等工作流模式，以及提交规范、分支管理、冲突解决等实用技巧。
+keywords:
+  - Git
+  - 工作流
+  - 版本控制
+  - Git Flow
+  - 团队协作
 categories:
   - 开发工具
 tags:

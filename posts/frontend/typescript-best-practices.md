@@ -1,6 +1,14 @@
 ---
 title: TypeScript 最佳实践与编码规范
-date: 2024-12-14 20:15:22
+date: 2025-06-03 10:00:00
+cover: https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=1920
+description: 全面讲解 TypeScript 开发的最佳实践和编码规范，包括类型定义、接口设计、泛型使用、配置优化、常见陷阱等，帮助你写出类型安全且易维护的代码。
+keywords:
+  - TypeScript
+  - 最佳实践
+  - 编码规范
+  - 类型安全
+  - 前端开发
 categories:
   - 前端开发
 tags:
@@ -10,6 +18,8 @@ tags:
 ---
 
 # TypeScript 最佳实践与编码规范
+
+> 📖 阅读时间：35分钟 | 难度：⭐⭐⭐⭐ 高级 | 更新日期：2025-01-26
 
 TypeScript 为 JavaScript 带来了强大的类型系统，但要充分发挥其优势，需要遵循一些最佳实践。
 
@@ -408,16 +418,242 @@ class Calculator {
 }
 ```
 
+## TypeScript 5.x 新特性
+
+### 1. const 类型参数 (TS 5.0)
+
+```typescript
+// 之前需要使用 as const
+function makeArray<T>(items: T[]) {
+  return items
+}
+const arr1 = makeArray(['a', 'b']) // string[]
+
+// TS 5.0: 使用 const 类型参数
+function makeArrayConst<const T>(items: T[]) {
+  return items
+}
+const arr2 = makeArrayConst(['a', 'b']) // readonly ["a", "b"]
+```
+
+### 2. satisfies 操作符 (TS 4.9+)
+
+确保类型符合约束，同时保留精确类型。
+
+```typescript
+type Colors = 'red' | 'green' | 'blue'
+
+// ❌ 使用类型断言会丢失精确类型
+const palette1: Record<Colors, string | number[]> = {
+  red: '#ff0000',
+  green: [0, 255, 0],
+  blue: '#0000ff'
+}
+palette1.red.toUpperCase() // 错误：string | number[] 上不存在 toUpperCase
+
+// ✅ 使用 satisfies 保留精确类型
+const palette2 = {
+  red: '#ff0000',
+  green: [0, 255, 0],
+  blue: '#0000ff'
+} satisfies Record<Colors, string | number[]>
+
+palette2.red.toUpperCase() // ✅ TypeScript 知道 red 是 string
+palette2.green.push(128) // ✅ TypeScript 知道 green 是 number[]
+```
+
+### 3. 装饰器元数据 (TS 5.0)
+
+新的装饰器标准，不再需要 `experimentalDecorators`。
+
+```typescript
+// 类装饰器
+function logged<T extends { new (...args: any[]): {} }>(
+  value: T,
+  context: ClassDecoratorContext
+) {
+  return class extends value {
+    constructor(...args: any[]) {
+      super(...args)
+      console.log(`Creating instance of ${context.name}`)
+    }
+  }
+}
+
+@logged
+class Person {
+  name: string
+  constructor(name: string) {
+    this.name = name
+  }
+}
+
+// 方法装饰器
+function bound(
+  value: Function,
+  context: ClassMethodDecoratorContext
+) {
+  const methodName = String(context.name)
+  context.addInitializer(function () {
+    ;(this as any)[methodName] = (this as any)[methodName].bind(this)
+  })
+}
+
+class MyClass {
+  message = 'Hello'
+
+  @bound
+  greet() {
+    console.log(this.message)
+  }
+}
+
+const obj = new MyClass()
+const greet = obj.greet
+greet() // 正常工作，this 已绑定
+```
+
+### 4. 支持 import type 和 export type (TS 3.8+)
+
+```typescript
+// 仅导入类型，不会在运行时保留
+import type { User } from './types'
+import { fetchUser } from './api' // 运行时导入
+
+// 混合导入
+import { type User, fetchUser } from './module'
+
+// 导出类型
+export type { User, Admin } from './types'
+```
+
+### 5. 模板字符串类型增强 (TS 5.0+)
+
+```typescript
+// 更强大的模板字符串类型
+type EventName<T extends string> = `${T}Changed`
+type PersonEvent = EventName<'name' | 'age'> // "nameChanged" | "ageChanged"
+
+// 实际应用：类型安全的事件系统
+type Events = {
+  click: { x: number; y: number }
+  focus: { element: HTMLElement }
+  input: { value: string }
+}
+
+type EventNames = keyof Events
+type EventHandlers = {
+  [K in EventNames as `on${Capitalize<K>}`]: (event: Events[K]) => void
+}
+
+// 结果类型：
+// {
+//   onClick: (event: { x: number; y: number }) => void
+//   onFocus: (event: { element: HTMLElement }) => void
+//   onInput: (event: { value: string }) => void
+// }
+```
+
+### 6. 使用 using 声明进行资源管理 (TS 5.2)
+
+```typescript
+// 实现 Disposable 接口
+class FileHandle {
+  private file: File
+
+  constructor(file: File) {
+    this.file = file
+  }
+
+  read() {
+    // 读取文件
+  }
+
+  [Symbol.dispose]() {
+    // 自动清理资源
+    console.log('Closing file')
+  }
+}
+
+function processFile() {
+  using file = new FileHandle(myFile)
+  file.read()
+  // 函数结束时自动调用 Symbol.dispose
+}
+```
+
+### 7. 改进的类型推断
+
+```typescript
+// TS 5.0: 更好的数组推断
+const arr = [1, 2, 3]
+const doubled = arr.map(x => x * 2) // number[]，不再是 any[]
+
+// TS 5.1: 更好的函数返回类型推断
+function getUser() {
+  if (Math.random() > 0.5) {
+    return { name: 'John', age: 30 }
+  }
+  return { name: 'Jane', age: 25 }
+}
+// 推断为: { name: string; age: number }
+
+// TS 5.2: 更好的元组推断
+const tuple = [1, 'hello', true] as const
+// 推断为: readonly [1, "hello", true]
+```
+
+### 8. 性能优化配置 (TS 5.0+)
+
+```json
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "ESNext",
+    "moduleResolution": "bundler", // 新的模块解析策略
+    "verbatimModuleSyntax": true, // 更严格的模块语法
+    "allowImportingTsExtensions": true, // 允许导入 .ts 文件
+    "resolvePackageJsonExports": true, // 支持 package.json exports
+    "resolvePackageJsonImports": true, // 支持 package.json imports
+    "customConditions": ["development"] // 自定义条件
+  }
+}
+```
+
 ## 总结
 
 TypeScript 的最佳实践包括：
 
-1. **显式类型声明**：提高代码可读性
-2. **严格模式**：启用所有严格检查
-3. **善用类型系统**：联合类型、交叉类型、泛型等
-4. **类型守卫**：确保类型安全
-5. **只读属性**：保护数据不被修改
-6. **高级类型**：映射类型、条件类型等
-7. **合理配置**：使用严格的 tsconfig.json
+**核心原则：**
+1. ✅ **显式类型声明** - 提高代码可读性
+2. ✅ **严格模式** - 启用所有严格检查
+3. ✅ **善用类型系统** - 联合类型、交叉类型、泛型等
+4. ✅ **类型守卫** - 确保类型安全
+5. ✅ **只读属性** - 保护数据不被修改
+
+**高级特性：**
+6. ✅ **映射类型** - 灵活转换类型
+7. ✅ **条件类型** - 类型级别的逻辑判断
+8. ✅ **模板字符串类型** - 类型安全的字符串操作
+
+**TypeScript 5.x 新特性：**
+9. ✅ **const 类型参数** - 更精确的类型推断
+10. ✅ **satisfies 操作符** - 类型检查 + 精确类型
+11. ✅ **新装饰器标准** - 更强大的元编程
+12. ✅ **using 声明** - 自动资源管理
+13. ✅ **改进的类型推断** - 更智能的类型系统
 
 遵循这些实践，可以充分发挥 TypeScript 的优势，编写更安全、更易维护的代码。
+
+## 🔗 相关文章
+
+- [TypeScript 高级类型系统完全指南](./typescript-advanced-types.md)
+- [JavaScript ES6+ 完全指南](./javascript-complete-guide.md)
+- [React Hooks 完全指南](./react-hooks-guide.md)
+
+## 📖 参考资源
+
+- [TypeScript 官方文档](https://www.typescriptlang.org/)
+- [TypeScript 5.0 发布说明](https://devblogs.microsoft.com/typescript/announcing-typescript-5-0/)
+- [TypeScript 5.2 发布说明](https://devblogs.microsoft.com/typescript/announcing-typescript-5-2/)
+- [TypeScript Deep Dive](https://basarat.gitbook.io/typescript/)

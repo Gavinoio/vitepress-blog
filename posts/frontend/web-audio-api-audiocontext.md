@@ -1,6 +1,13 @@
 ---
 title: Web Audio API 核心：AudioContext 深度解析
-date: 2025-12-20 10:00:00
+date: 2025-10-18 15:45:00
+description: 深入讲解 Web Audio API 的核心 AudioContext，包括音频节点、音频图、音频处理、可视化、性能优化等，帮助你在浏览器中实现专业的音频处理功能。
+keywords:
+  - Web Audio API
+  - AudioContext
+  - 音频处理
+  - JavaScript
+  - 浏览器 API
 categories:
   - 前端开发
 tags:

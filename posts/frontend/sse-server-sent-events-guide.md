@@ -1,6 +1,13 @@
 ---
 title: SSE（Server-Sent Events）完全指南：实时通信的轻量级方案
-date: 2026-01-18 15:20:00
+date: 2025-09-25 11:20:00
+description: 全面讲解 SSE（Server-Sent Events）技术的原理和实战应用，包括与 WebSocket 的对比、连接管理、错误处理、心跳机制等，帮助你选择合适的实时通信方案。
+keywords:
+  - SSE
+  - Server-Sent Events
+  - 实时通信
+  - WebSocket
+  - HTTP
 categories:
   - 前端开发
 tags:
@@ -9,7 +16,7 @@ tags:
   - WebSocket
   - 实时通信
   - HTTP
-cover: https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1920
+cover: https://images.unsplash.com/photo-1484417894907-623942c8ee29?w=1920
 ---
 
 # SSE（Server-Sent Events）完全指南

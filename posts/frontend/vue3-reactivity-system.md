@@ -1,6 +1,14 @@
 ---
 title: 深入理解 Vue 3 响应式系统原理
-date: 2024-12-12 10:51:15
+date: 2025-03-08 14:00:00
+cover: https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=1920
+description: 深入讲解 Vue 3 响应式系统的工作原理，包括 Proxy 和 Reflect 的使用、响应式对象的创建、依赖收集、触发更新等核心机制，对比 Vue 2 的差异，帮助你理解 Vue 3 性能提升的奥秘。
+keywords:
+  - Vue 3
+  - 响应式
+  - Proxy
+  - 依赖收集
+  - 响应式系统
 categories:
   - 前端开发
 tags:

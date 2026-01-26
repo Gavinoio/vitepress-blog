@@ -35,7 +35,15 @@
       "Bash(echo:*)",
       "Bash(done)",
       "Bash(npm view:*)",
-      "Bash(ping:*)"
+      "Bash(ping:*)",
+      "Bash(tree:*)",
+      "Bash(sort:*)",
+      "Bash(uniq:*)",
+      "Bash(do if [ -f \"$file\" ])",
+      "Bash(then if ! grep -q \"^cover:\" \"$file\")",
+      "Bash(then echo \"$file\")",
+      "Bash(fi)",
+      "Bash(grep:*)"
     ]
   }
 }

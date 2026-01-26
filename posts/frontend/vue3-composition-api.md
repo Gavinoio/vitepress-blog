@@ -1,6 +1,13 @@
 ---
 title: Vue 3 Composition API 深度解析
-date: 2024-12-15 17:22:04
+date: 2025-04-10 15:20:00
+description: 深入讲解 Vue 3 Composition API 的核心概念和最佳实践，包括 setup 函数、响应式 API、生命周期钩子、组合式函数的设计模式等，帮助你写出更灵活、更易维护的 Vue 代码。
+keywords:
+  - Vue 3
+  - Composition API
+  - setup
+  - 组合式函数
+  - Vue 响应式
 categories:
   - 前端开发
 tags:

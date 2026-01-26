@@ -1,6 +1,13 @@
 ---
 title: Node.js 异步编程模式深度解析
-date: 2024-12-13 04:22:42
+date: 2025-03-25 10:30:00
+description: 深入探讨 Node.js 异步编程的演进历程，从回调函数到 Promise、async/await，详解事件循环机制、宏任务与微任务、异步错误处理、并发控制等核心概念，帮助你掌握 Node.js 异步编程的精髓。
+keywords:
+  - Node.js
+  - 异步编程
+  - Promise
+  - async/await
+  - 事件循环
 categories:
   - 后端开发
 tags:
