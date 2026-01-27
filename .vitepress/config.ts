@@ -9,6 +9,12 @@ export default defineConfig({
 
   themeConfig: {
     author: 'Gavin',
+
+    // 搜索配置
+    search: {
+      provider: 'local'
+    },
+
     // 文章目录配置
     postDir: 'posts',
 
