@@ -552,12 +552,6 @@ GEO 需要持续优化，不是一次性工作。
 
 ---
 
-## 🔗 相关文章
-
-- [SEO 完全指南：从入门到精通](./seo-complete-guide.md)
-- [内容营销策略与实践](./content-marketing-guide.md)
-- [技术博客写作技巧](./technical-writing-guide.md)
-
 ## 📖 参考资源
 
 - [Google Search Central - AI Overview](https://developers.google.com/search/docs/appearance/ai-overviews)
