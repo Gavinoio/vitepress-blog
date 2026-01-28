@@ -43,7 +43,9 @@
       "Bash(then if ! grep -q \"^cover:\" \"$file\")",
       "Bash(then echo \"$file\")",
       "Bash(fi)",
-      "Bash(grep:*)"
+      "Bash(grep:*)",
+      "Bash(git config:*)",
+      "Bash(xargs -I {} sh -c 'echo \"\"=== {} ===\"\" && head -20 {}')"
     ]
   }
 }
