@@ -60,3 +60,14 @@
 .trm-banner-cover {
   transition: opacity 0.3s ease-in-out;
 }
+
+.dark {
+  --body-bg-color: #18181b !important;
+  --theme-bg-color: #18181b !important;
+  --theme-bg2-color: #000000 !important;
+
+  --code-block-bg: #060606 !important;
+
+  --fixed-button-bg-color: #18181b !important;
+  --scroll-progress-bg-color: linear-gradient(to top, #6062ce, #8b8dd8) !important;
+}
