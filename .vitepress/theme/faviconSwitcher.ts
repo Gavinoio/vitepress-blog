@@ -5,9 +5,15 @@ const FAVICON_CONFIG = {
 };
 
 export function setupFaviconSwitcher() {
+  // 确保只在客户端运行
+  if (typeof window === 'undefined' || typeof document === 'undefined') {
+    return;
+  }
+
   // 缓存已加载的图标 URL，避免重复添加时间戳
   let cachedOriginalUrl = '';
   let cachedGrayUrl = '';
+  let isInitialized = false;
 
   function updateFavicon(href: string, isGray: boolean) {
     if (!href) return;
@@ -24,12 +30,14 @@ export function setupFaviconSwitcher() {
     let finalUrl: string;
     if (isGray) {
       if (!cachedGrayUrl) {
-        cachedGrayUrl = href + '?t=' + Date.now();
+        // 只在首次初始化时添加时间戳，避免 hydration mismatch
+        cachedGrayUrl = isInitialized ? href : href + '?t=' + Date.now();
       }
       finalUrl = cachedGrayUrl;
     } else {
       if (!cachedOriginalUrl) {
-        cachedOriginalUrl = href + '?t=' + Date.now();
+        // 只在首次初始化时添加时间戳，避免 hydration mismatch
+        cachedOriginalUrl = isInitialized ? href : href + '?t=' + Date.now();
       }
       finalUrl = cachedOriginalUrl;
     }
@@ -42,14 +50,19 @@ export function setupFaviconSwitcher() {
     document.head.appendChild(newLink);
   }
 
-  // 监听页面可见性变化
-  document.addEventListener('visibilitychange', () => {
-    if (document.hidden) {
-      // 页面隐藏时，切换到灰度 favicon
-      updateFavicon(FAVICON_CONFIG.gray, true);
-    } else {
-      // 页面显示时，恢复原始 favicon
-      updateFavicon(FAVICON_CONFIG.original, false);
-    }
+  // 延迟初始化，避免 hydration mismatch
+  requestAnimationFrame(() => {
+    isInitialized = true;
+
+    // 监听页面可见性变化
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden) {
+        // 页面隐藏时，切换到灰度 favicon
+        updateFavicon(FAVICON_CONFIG.gray, true);
+      } else {
+        // 页面显示时，恢复原始 favicon
+        updateFavicon(FAVICON_CONFIG.original, false);
+      }
+    });
   });
 }

@@ -33,3 +33,30 @@
   opacity: 1 !important;
   transform: translateY(0) scale(1) !important;
 }
+
+/* 移动端视频横幅优化 */
+@media (max-width: 768px) {
+  /* 确保视频在移动端正确显示 */
+  .trm-banner-cover {
+    object-fit: cover !important;
+    width: 100% !important;
+    height: 100% !important;
+  }
+
+  /* 移动端横幅高度优化 */
+  .trm-banner {
+    min-height: 250px !important;
+  }
+
+  /* 视频元素移动端优化 */
+  video.trm-banner-cover {
+    /* 强制内联播放，避免全屏 */
+    -webkit-playsinline: true;
+    -webkit-media-controls: none;
+  }
+}
+
+/* 修复 hydration mismatch - 确保客户端和服务端渲染一致 */
+.trm-banner-cover {
+  transition: opacity 0.3s ease-in-out;
+}
