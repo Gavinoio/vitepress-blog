@@ -2,6 +2,7 @@ import ThemeAsync from "vitepress-theme-async";
 import type { Theme } from "vitepress";
 import { setupFaviconSwitcher } from "./faviconSwitcher";
 import CustomBannerBg from "./components/CustomBannerBg.vue";
+import EyeDropperDemo from "./components/EyeDropperDemo.vue";
 import "./styles/custom.css";
 
 // 过滤主题的控制台宣传信息
@@ -20,6 +21,7 @@ export default {
   enhanceApp({ app }) {
     // 注册自定义横幅组件，覆盖主题默认组件
     app.component('TrmBannerBg', CustomBannerBg);
+    app.component('EyeDropperDemo', EyeDropperDemo);
 
     // 在客户端初始化 favicon 切换器
     if (typeof window !== 'undefined') {
